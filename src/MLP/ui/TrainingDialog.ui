@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TrainingDialog</class>
+ <widget class="QWidget" name="TrainingDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>437</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>678</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Training settings</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+	color: #1f1f1f;
+}
+#TrainingDialog{
+	background: #c9c9c9;
+}
+QPushButton{
+	color: #c9c9c9;
+	background: #0f0e0e;
+	height:30px;
+	border: 1px solid #b5b5b5;
+	border-radius: 5px;
+}
+QPushButton::pressed{
+	background: #1c1a1a;
+}
+QPushButton::disabled{
+	color: #3b3b3b;
+}
+#LogBoxTE QSpinBox {
+	color: #c9c9c9;
+	border-radius:5px;
+	background: #1f1c1c;
+}
+QSpinBox {
+	color: #c9c9c9;
+	border-radius:5px;
+	background: #1f1c1c;
+}
+QLabel{
+	color: #1f1f1f;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="topMargin">
+    <number>12</number>
+   </property>
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="MainVL">
+     <item>
+      <widget class="QLabel" name="MainLabel">
+       <property name="font">
+        <font>
+         <pointsize>21</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Network training settings:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="ImplementationL">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Network perceptron implementation:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="ImplementationHL">
+       <item>
+        <widget class="QRadioButton" name="MatrixRB">
+         <property name="text">
+          <string>Matrix</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="GraphRB">
+         <property name="text">
+          <string>Graph</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="HiddenLayersHL">
+       <item>
+        <widget class="QSpinBox" name="HiddenLayersSB">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>2</number>
+         </property>
+         <property name="maximum">
+          <number>5</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="HiddenLayersLB">
+         <property name="text">
+          <string>Hidden layers N</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="EpochNHL">
+       <item>
+        <widget class="QSpinBox" name="EpochNSB">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="EpochNLB">
+         <property name="text">
+          <string>Epoch N</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Dataset file:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="s21::FileImportWidget" name="FileImportWid" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>38</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="ComandsHL">
+       <item>
+        <widget class="QPushButton" name="StartB">
+         <property name="text">
+          <string>Start</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="AbortB">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Abort</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="ReturnB">
+         <property name="text">
+          <string>Return</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>s21::FileImportWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">FileImportWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
